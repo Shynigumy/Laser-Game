@@ -16,6 +16,7 @@ public class Weapon : MonoBehaviour
     {
         cristal = null;
         angular = null;
+        receptor = null;
     }
 
     void Update()
@@ -36,7 +37,11 @@ public class Weapon : MonoBehaviour
                 angular.GetComponent<Angular>().EncendidoD = true;
 
                 angular.GetComponent<Angular>().LastLaser(FirePoint.GetComponent<LineRenderer>());
-
+                if (cristal != null)
+                {
+                    cristal.GetComponent<Cristal>().EncendidoF = false;
+                    cristal.GetComponent<Cristal>().EncendidoB = false;
+                }
                 receptor = null;
                 cristal = null;
             }
@@ -47,7 +52,11 @@ public class Weapon : MonoBehaviour
                 angular.GetComponent<Angular>().EncendidoI = true;
 
                 angular.GetComponent<Angular>().LastLaser(FirePoint.GetComponent<LineRenderer>());
-
+                if (cristal != null)
+                {
+                    cristal.GetComponent<Cristal>().EncendidoF = false;
+                    cristal.GetComponent<Cristal>().EncendidoB = false;
+                }
                 receptor = null;
                 cristal = null;
             }
@@ -57,44 +66,45 @@ public class Weapon : MonoBehaviour
                 receptor = hit.collider.gameObject;
 
                 hit.collider.gameObject.GetComponent<Receptor>().Encendido = true;
-
+                if (cristal != null)
+                {
+                    cristal.GetComponent<Cristal>().EncendidoF = false;
+                    cristal.GetComponent<Cristal>().EncendidoB = false;
+                }
                 angular = null;
                 cristal = null;
 
             }
             else if (hit.collider.gameObject.tag == "DirCheckF" || hit.collider.gameObject.tag == "DirCheckB")
             {
-                
+                cristal = hit.collider.gameObject.transform.parent.gameObject;
+                cristal.GetComponent<Cristal>().LastLaser(FirePoint.GetComponent<LineRenderer>());
+                receptor = null;
+                angular = null;
+
                 if (hit.collider.gameObject.tag == "DirCheckF")
                 {
-                    cristal = hit.collider.gameObject.transform.parent.gameObject;
-
-
+                    Debug.Log("Entra en collider dirCheckF Weapon");
                     cristal.GetComponent<Cristal>().EncendidoB = true;
-                    cristal.GetComponent<Cristal>().LastLaser(FirePointCristalB.GetComponent<LineRenderer>());
+                    cristal.transform.GetChild(2).gameObject.SetActive(false);
 
-
-                    receptor = null;
-                    angular = null;
                 }
-                else if(hit.collider.gameObject.tag == "DirCheckB")
+                else if (hit.collider.gameObject.tag == "DirCheckB")
                 {
-                    cristal = hit.collider.gameObject.transform.parent.gameObject;
+                    Debug.Log("Entra en collider dirCheckB Weapon");
 
                     cristal.GetComponent<Cristal>().EncendidoF = true;
-                    cristal.GetComponent<Cristal>().LastLaser(FirePointCristalF.GetComponent<LineRenderer>());
-                    
-                    receptor = null;
-                    angular = null;
+                    cristal.transform.GetChild(1).gameObject.SetActive(false);
+
                 }
 
             }
 
-
         }
-        else  
+        else
         {
-            if(angular != null)
+            Debug.Log("Sale");
+            if (angular != null)
             {
                 angular.GetComponent<Angular>().EncendidoD = false;
             }
@@ -104,9 +114,12 @@ public class Weapon : MonoBehaviour
             }
             else if (cristal != null)
             {
-                cristal.GetComponent<Cristal>().Encendido = false;
+                cristal.GetComponent<Cristal>().EncendidoF = false;
+                cristal.GetComponent<Cristal>().EncendidoB = false;
             }
 
         }
+
     }
+
 }

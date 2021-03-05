@@ -7,8 +7,7 @@ public class Angular : MonoBehaviour
     public GameObject cristal;
     public GameObject angular;
     public GameObject receptor;
-    public GameObject FirePointAngularL;
-    public GameObject FirePointAngularD;
+    public GameObject FirePointAngular;
     public LineRenderer lr;
 
     public Collider DirCheckD;
@@ -36,22 +35,22 @@ public class Angular : MonoBehaviour
         {
             Debug.Log("EncendidoD Working");
             DirCheckI.gameObject.SetActive(false);
-            FirePointAngularL.SetActive(true);
+            FirePointAngular.SetActive(true);
             Fire();
 
         }
         else if (EncendidoI == true)
         {
             DirCheckD.gameObject.SetActive(false);
-            FirePointAngularD.SetActive(true);
+            FirePointAngular.SetActive(true);
             Fire();
 
 
         }
         else
         {
-            FirePointAngularL.SetActive(false);
-            FirePointAngularD.SetActive(false);
+            FirePointAngular.SetActive(false);
+            FirePointAngular.SetActive(false);
 
             if (angular != null)
             {
@@ -72,7 +71,7 @@ public class Angular : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(FirePointAngularL.transform.position, FirePointAngularL.transform.forward, out hit))
+        if (Physics.Raycast(FirePointAngular.transform.position, FirePointAngular.transform.forward, out hit))
         {
             if (hit.collider.gameObject.tag == "DirCheckD" || hit.collider.gameObject.tag == "DirCheckI")
             {
@@ -82,9 +81,9 @@ public class Angular : MonoBehaviour
                     Debug.Log(angular);
                     angular.GetComponent<Angular>().EncendidoD = true;
 
-                    angular.GetComponent<Angular>().LastLaser(FirePointAngularL.GetComponent<LineRenderer>());
+                    angular.GetComponent<Angular>().LastLaser(FirePointAngular.GetComponent<LineRenderer>());
 
-                    FirePointAngularL.GetComponent<LineRenderer>().material = lr.material;
+                    FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
 
                     receptor = null;
                     cristal = null;
@@ -95,9 +94,9 @@ public class Angular : MonoBehaviour
                     Debug.Log(angular);
                     angular.GetComponent<Angular>().EncendidoI = true;
                     Debug.Log("Get Laser");
-                    angular.GetComponent<Angular>().LastLaser(FirePointAngularD.GetComponent<LineRenderer>());
+                    angular.GetComponent<Angular>().LastLaser(FirePointAngular.GetComponent<LineRenderer>());
 
-                    FirePointAngularD.GetComponent<LineRenderer>().material = lr.material;
+                    FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
 
                     receptor = null;
                     cristal = null;
@@ -111,9 +110,9 @@ public class Angular : MonoBehaviour
                     hit.collider.gameObject.GetComponent<Receptor>().Encendido = true;
                     angular = null;
                     cristal = null;
-                    receptor.GetComponent<Receptor>().LastLaser(FirePointAngularL.GetComponent<LineRenderer>());
+                    receptor.GetComponent<Receptor>().LastLaser(FirePointAngular.GetComponent<LineRenderer>());
 
-                    FirePointAngularL.GetComponent<LineRenderer>().material = lr.material;
+                    FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
 
                 }
                 else if (hit.collider.gameObject.tag == "DirCheckF" || hit.collider.gameObject.tag == "DirCheckB")
@@ -147,8 +146,8 @@ public class Angular : MonoBehaviour
             }
             else
             {
-                FirePointAngularL.GetComponent<LineRenderer>().material = lr.material;
-                FirePointAngularD.GetComponent<LineRenderer>().material = lr.material;
+                FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
+                FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
 
                 if (angular != null)
                 {
@@ -163,9 +162,6 @@ public class Angular : MonoBehaviour
                     cristal.GetComponent<Cristal>().Encendido = false;
                 }
             }
-
-
-
 
         }
 
