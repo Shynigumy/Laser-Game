@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Enemy
   - Receptor
+  - Cristal
+  - DirCheckI
+  - DirCheckD
+  - DirCheckF
+  - DirCheckB
   layers:
   - Default
   - TransparentFX
