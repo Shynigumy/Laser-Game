@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e468b75194ffd84dac1427d502feebd
+guid: 7ec4be01e897169419d7d3a855e0cde9
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,8 +9,9 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Nasalization
-  fallbackFontReferences: []
+  - Olga
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 74e3b19da06ff074e91c23475154becd, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
