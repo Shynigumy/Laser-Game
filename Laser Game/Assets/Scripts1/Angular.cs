@@ -22,8 +22,8 @@ public class Angular : MonoBehaviour
     public bool EncendidoI = false;
     void Start()
     {
-        DirCheckD = gameObject.transform.GetChild(2).GetComponent<Collider>();
-        DirCheckI = gameObject.transform.GetChild(3).GetComponent<Collider>();
+        DirCheckD = gameObject.transform.GetChild(1).GetComponent<Collider>();
+        DirCheckI = gameObject.transform.GetChild(2).GetComponent<Collider>();
         receptor = null;
         cristal = null;
     }
@@ -139,7 +139,7 @@ public class Angular : MonoBehaviour
                         receptor = null;
                         angular = null;
                     }
-
+                    
                 }
 
 
