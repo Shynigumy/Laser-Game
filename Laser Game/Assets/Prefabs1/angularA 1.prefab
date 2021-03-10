@@ -113,11 +113,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717515952899034335}
-  m_LocalRotation: {x: -0.6532815, y: -0.27059805, z: -0.27059805, w: -0.6532815}
+  m_LocalRotation: {x: -0.6532815, y: -0.27059802, z: -0.27059802, w: -0.6532815}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5000001, y: 0.49999988, z: 0.5000001}
+  m_LocalScale: {x: 0.5000002, y: 0.49999994, z: 0.5000001}
   m_Children: []
-  m_Father: {fileID: 591008236560830598}
+  m_Father: {fileID: 1518019050508180659}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &1717515952899034329
@@ -312,6 +312,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3779389085328671344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1518019050508180659}
+  m_Layer: 0
+  m_Name: FirePointAngularEmpty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1518019050508180659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779389085328671344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1717515952899034330}
+  m_Father: {fileID: 591008236560830598}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3878584321529459374
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +646,7 @@ Transform:
   m_GameObject: {fileID: 5778032585746574238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 8.65}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5778032585598698023}
   m_Father: {fileID: 0}
@@ -652,7 +683,7 @@ Transform:
   m_LocalPosition: {x: -0.03695752, y: 0.218, z: 0.02196721}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1717515952899034330}
+  - {fileID: 1518019050508180659}
   - {fileID: 1354748059}
   - {fileID: 972675931}
   m_Father: {fileID: 5778032585598698023}
@@ -739,8 +770,5 @@ MonoBehaviour:
   lr: {fileID: 0}
   DirCheckD: {fileID: 1354748060}
   DirCheckI: {fileID: 972675932}
-  DirCheck: 0
-  FirePointCristalB: {fileID: 0}
-  FirePointCristalF: {fileID: 0}
   EncendidoD: 0
   EncendidoI: 0

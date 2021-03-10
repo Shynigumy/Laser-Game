@@ -16,14 +16,12 @@ public class Cristal : MonoBehaviour
     public bool EncendidoB;
     public bool EncendidoF;
 
-    public bool Encendido = false;
-
     void Start()
     {
         DirCheckF = gameObject.transform.GetChild(1).gameObject.GetComponent<Collider>();
         DirCheckB = gameObject.transform.GetChild(2).gameObject.GetComponent<Collider>();
         receptor = null;
-        
+        angular = null;
     }
 
     void Update()
@@ -31,17 +29,19 @@ public class Cristal : MonoBehaviour
 
         if (EncendidoB == true)
         {
-            Debug.Log(this.transform.parent.gameObject.transform.localEulerAngles.y);
             FirePointCristal.transform.eulerAngles = new Vector3(0, 180 + this.transform.parent.gameObject.transform.localEulerAngles.y, 0);
             FirePointCristal.SetActive(true);
+            DirCheckB.gameObject.SetActive(false);
             Fire();
-
+            
         }
         else if(EncendidoF == true)
         {
             FirePointCristal.transform.eulerAngles = new Vector3(0, this.transform.parent.gameObject.transform.localEulerAngles.y, 0);
             FirePointCristal.SetActive(true);
+            DirCheckF.gameObject.SetActive(false);
             Fire();
+            
         }
         else
         {
@@ -51,11 +51,17 @@ public class Cristal : MonoBehaviour
             DirCheckF.gameObject.SetActive(true);
             if (angular != null)
             {
-                cristal.GetComponent<Angular>().EncendidoD = false;
+                angular.GetComponent<Angular>().EncendidoD = false;
+                angular.GetComponent<Angular>().EncendidoI = false;
             }
             else if (receptor != null)
             {
                 receptor.GetComponent<Receptor>().Encendido = false;
+            }
+            else if (cristal != null)
+            {
+                cristal.GetComponent<Cristal>().EncendidoB = false;
+                cristal.GetComponent<Cristal>().EncendidoF = false;
             }
         }
     }
@@ -107,7 +113,6 @@ public class Cristal : MonoBehaviour
                 {
                     Debug.Log("Entra en collider dirCheckF");
                     cristal = hit.collider.gameObject.transform.parent.gameObject;
-                    DirCheckB.gameObject.SetActive(false);
                     cristal.GetComponent<Cristal>().EncendidoB = true;
                     cristal.GetComponent<Cristal>().LastLaser(FirePointCristal.GetComponent<LineRenderer>());
                     
@@ -119,7 +124,6 @@ public class Cristal : MonoBehaviour
                 {
                     Debug.Log("Entra en collider dirCheckB Cristal");
                     cristal = hit.collider.gameObject.transform.parent.gameObject;
-                    DirCheckF.gameObject.SetActive(false);
                     cristal.GetComponent<Cristal>().EncendidoF = true;
                     cristal.GetComponent<Cristal>().LastLaser(FirePointCristal.GetComponent<LineRenderer>());
 
@@ -132,10 +136,11 @@ public class Cristal : MonoBehaviour
         else
         {
             FirePointCristal.GetComponent<LineRenderer>().material = lr.material;
-
+            
             if (cristal != null)
             {
-                cristal.GetComponent<Cristal>().Encendido = false;
+                cristal.GetComponent<Cristal>().EncendidoB = false;
+                cristal.GetComponent<Cristal>().EncendidoF = false;
             }
             else if (receptor != null)
             {
@@ -144,6 +149,7 @@ public class Cristal : MonoBehaviour
             else if (angular != null)
             {
                 angular.GetComponent<Angular>().EncendidoD = false;
+                angular.GetComponent<Angular>().EncendidoI = false;
             }
         }
 
@@ -155,4 +161,6 @@ public class Cristal : MonoBehaviour
     {
         lr = laser;
     }
+
+    
 }
