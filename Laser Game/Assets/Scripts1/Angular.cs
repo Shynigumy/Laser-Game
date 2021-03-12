@@ -95,8 +95,10 @@ public class Angular : MonoBehaviour
 
                     FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
                     DesactivarReceptorCristal();
+                    
                     receptor = null;
                     cristal = null;
+                    prisma = null;
                 }
                 else if (hit.collider.gameObject.tag == "DirCheckI")
                 {
@@ -107,9 +109,10 @@ public class Angular : MonoBehaviour
 
                     FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
                     DesactivarReceptorCristal();
+                   
                     receptor = null;
                     cristal = null;
-
+                    prisma = null;
                 }
             }
             else if (hit.collider.gameObject.tag == "Receptor")
@@ -119,8 +122,10 @@ public class Angular : MonoBehaviour
 
                 hit.collider.gameObject.GetComponent<Receptor>().Encendido = true;
                 DesactivarAngularCristal();
+                
                 angular = null;
                 cristal = null;
+                prisma = null;
                 receptor.GetComponent<Receptor>().LastLaser(FirePointAngular.GetComponent<LineRenderer>());
 
                 FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
@@ -133,12 +138,13 @@ public class Angular : MonoBehaviour
 
                 cristal.GetComponent<Cristal>().EncendidoB = true;
                 DesactivarAngularReceptor();
-
+               
                 cristal.GetComponent<Cristal>().LastLaser(FirePointAngular.GetComponent<LineRenderer>());
 
                 FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
                 receptor = null;
                 angular = null;
+                prisma = null;
             }
             else if (hit.collider.gameObject.tag == "DirCheckB")
             {
@@ -147,12 +153,27 @@ public class Angular : MonoBehaviour
 
                 cristal.GetComponent<Cristal>().EncendidoF = true;
                 DesactivarAngularReceptor();
+                
 
                 cristal.GetComponent<Cristal>().LastLaser(FirePointAngular.GetComponent<LineRenderer>());
 
                 FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
 
                 receptor = null;
+                angular = null;
+                prisma = null;
+            }
+            else if (hit.collider.gameObject.tag == "Prisma IN")
+            {
+                Debug.Log(prisma);
+                prisma = hit.collider.gameObject;
+                Debug.Log(prisma);
+                prisma.GetComponent<Prisma>().Encendido = true;
+                DesactivarReceptorCristal();
+                DesactivarAngularCristal();
+                prisma.GetComponent<Prisma>().LastLaser(FirePointAngular.GetComponent<LineRenderer>());
+                receptor = null;
+                cristal = null;
                 angular = null;
             }
             else
@@ -176,6 +197,50 @@ public class Angular : MonoBehaviour
         {
             receptor.GetComponent<Receptor>().Encendido = false;
         }
+        if (cristal != null)
+        {
+            Debug.Log("False");
+            cristal.GetComponent<Cristal>().EncendidoF = false;
+            cristal.GetComponent<Cristal>().EncendidoB = false;
+        }
+    }
+    public void DesactivarAngularPrisma()
+    {
+        FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
+
+        if (angular != null)
+        {
+            angular.GetComponent<Angular>().EncendidoD = false;
+            angular.GetComponent<Angular>().EncendidoI = false;
+        }
+        if (prisma != null)
+        {
+            prisma.GetComponent<Prisma>().Encendido = false;
+        }
+        
+    }
+    public void DesactivarReceptorPrisma()
+    {
+        FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
+
+        if (receptor != null)
+        {
+            receptor.GetComponent<Receptor>().Encendido = false;
+        }
+        if (prisma != null)
+        {
+            prisma.GetComponent<Prisma>().Encendido = false;
+        }
+
+    }
+    public void DesactivarCristalPrisma()
+    {
+        FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
+        if (prisma != null)
+        {
+            prisma.GetComponent<Prisma>().Encendido = false;
+        }
+
         if (cristal != null)
         {
             Debug.Log("False");
@@ -225,6 +290,10 @@ public class Angular : MonoBehaviour
             Debug.Log("False");
             cristal.GetComponent<Cristal>().EncendidoF = false;
             cristal.GetComponent<Cristal>().EncendidoB = false;
+        }
+        else if (prisma != null)
+        {
+            prisma.GetComponent<Prisma>().Encendido = false;
         }
     }
 

@@ -96,10 +96,12 @@ public class Weapon : MonoBehaviour
             }
             else if (hit.collider.gameObject.tag == "Prisma IN")
             {
-                prisma = hit.collider.gameObject.transform.parent.gameObject;
+                Debug.Log(prisma);
+                prisma = hit.collider.gameObject;
+                Debug.Log(prisma);
                 prisma.GetComponent<Prisma>().Encendido = true;
 
-                angular.GetComponent<Prisma>().LastLaser(FirePoint.GetComponent<LineRenderer>());
+                prisma.GetComponent<Prisma>().LastLaser(FirePoint.GetComponent<LineRenderer>());
                 receptor = null;
                 cristal = null;
                 angular = null;

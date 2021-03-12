@@ -33,6 +33,11 @@ public class Laser : MonoBehaviour
                 lr.SetPosition(0, new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z));
 
             }
+            else if (hit.collider.gameObject.tag == "Prisma IN")
+            {
+                lr.SetPosition(1, new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z + hit.distance));
+                lr.SetPosition(0, new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z));
+            }
             else
             {
                 lr.SetPosition(1, new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z + hit.distance));
