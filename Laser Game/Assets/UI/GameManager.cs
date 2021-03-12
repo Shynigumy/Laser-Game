@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     bool isPaused = false;
     bool isOptions = false;
+
+    //The real management part
 
     public void ResetScene(int SceneID)
     {
@@ -64,9 +68,63 @@ public class GameManager : MonoBehaviour
         isOptions = !isOptions;
     }
 
-    public void Exit()
+    public void exitMenu(int MenuScene)
     {
-
+        SceneManager.LoadScene(MenuScene);
     }
 
+
+    //Now options menu functionality
+
+
+    public AudioMixer Master;
+    public Dropdown resolutionDropdown;
+
+    Resolution[] resolutions;
+
+    private void Start()
+    {
+        resolutions = Screen.resolutions;
+
+        resolutionDropdown.ClearOptions();
+
+        List<string> options = new List<string>();
+
+        int currentResolutionIndex = 0;
+
+        for(int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height;
+            options.Add(option);
+
+            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+    }
+
+    public void SetSFXLvl(float sfxLvl)
+    {
+        Master.SetFloat("sfxVol", sfxLvl);
+    }
+
+    public void SetMusicLvl(float musicLvl)
+    {
+        Master.SetFloat("musicVol", musicLvl);
+    }
+
+    public void setGraphics (int graphicsIndex)
+    {
+        QualitySettings.SetQualityLevel(graphicsIndex);
+    }
+
+    public void setFullscreen (bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
 }
