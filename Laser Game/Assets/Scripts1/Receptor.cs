@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Receptor : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class Receptor : MonoBehaviour
             if (lr.material.name == color)
             {
                 Debug.Log("Win");
+                
             }
         }
         else

@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &2399531621488602795
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3501218540707314812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.44375658, y: 0.0483248, z: 0.3372744}
+  m_Center: {x: -0.010185063, y: 0.00000023841858, z: 0.049441606}
 --- !u!114 &7980350672300054257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,20 +30,10 @@ MonoBehaviour:
   receptor: {fileID: 0}
   FirePointCristal: {fileID: 8592417384258518814}
   lr: {fileID: 0}
-  Encendido: 0
---- !u!65 &2399531621488602795
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3501218540707314812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.44375658, y: 0.0483248, z: 0.3372744}
-  m_Center: {x: -0.010185063, y: 0.00000023841858, z: 0.049441606}
+  DirCheckF: {fileID: 0}
+  DirCheckB: {fileID: 0}
+  EncendidoB: 0
+  EncendidoF: 0
 --- !u!1 &8592417384258518814
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,9 +244,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: cristalYellow Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7091196329445830157, guid: 20d9001106c87bb4d92595d1ddaf9f4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7575949374704612535, guid: 20d9001106c87bb4d92595d1ddaf9f4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.239
+      value: 4.32
       objectReference: {fileID: 0}
     - target: {fileID: 7575949374704612535, guid: 20d9001106c87bb4d92595d1ddaf9f4f, type: 3}
       propertyPath: m_LocalPosition.y

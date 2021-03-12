@@ -8,6 +8,7 @@ public class Angular : MonoBehaviour
     public GameObject angular;
     public GameObject receptor;
     public GameObject FirePointAngular;
+    public GameObject prisma;
 
     public GameObject Empty;
     public LineRenderer lr;
@@ -21,8 +22,12 @@ public class Angular : MonoBehaviour
     {
         DirCheckD = gameObject.transform.GetChild(1).GetComponent<Collider>();
         DirCheckI = gameObject.transform.GetChild(2).GetComponent<Collider>();
-        receptor = null;
+
         cristal = null;
+        angular = null;
+        receptor = null;
+        prisma = null;
+
     }
 
     void Update()
@@ -65,6 +70,10 @@ public class Angular : MonoBehaviour
             {
                 cristal.GetComponent<Cristal>().EncendidoF = false;
                 cristal.GetComponent<Cristal>().EncendidoB = false;
+            }
+            else if (prisma != null)
+            {
+                prisma.GetComponent<Prisma>().Encendido = false;
             }
         }
     }
@@ -124,6 +133,10 @@ public class Angular : MonoBehaviour
 
                 cristal.GetComponent<Cristal>().EncendidoB = true;
                 DesactivarAngularReceptor();
+
+                cristal.GetComponent<Cristal>().LastLaser(FirePointAngular.GetComponent<LineRenderer>());
+
+                FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
                 receptor = null;
                 angular = null;
             }
@@ -134,6 +147,11 @@ public class Angular : MonoBehaviour
 
                 cristal.GetComponent<Cristal>().EncendidoF = true;
                 DesactivarAngularReceptor();
+
+                cristal.GetComponent<Cristal>().LastLaser(FirePointAngular.GetComponent<LineRenderer>());
+
+                FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
+
                 receptor = null;
                 angular = null;
             }
@@ -147,7 +165,6 @@ public class Angular : MonoBehaviour
     }
     public void LastLaser(LineRenderer laser)
     {
-        
         lr = laser;
     }
 

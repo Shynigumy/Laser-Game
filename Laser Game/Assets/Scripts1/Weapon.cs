@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     public GameObject FirePoint;
     public GameObject angular;
     public GameObject receptor;
+    public GameObject prisma;
 
     public GameObject FirePointCristalF;
     public GameObject FirePointCristalB;
@@ -17,6 +18,7 @@ public class Weapon : MonoBehaviour
         cristal = null;
         angular = null;
         receptor = null;
+        prisma = null;
     }
 
     void Update()
@@ -38,6 +40,7 @@ public class Weapon : MonoBehaviour
                 angular.GetComponent<Angular>().LastLaser(FirePoint.GetComponent<LineRenderer>());
                 receptor = null;
                 cristal = null;
+                prisma = null;
             }
             else if (hit.collider.gameObject.tag == "DirCheckI")
             {
@@ -48,6 +51,7 @@ public class Weapon : MonoBehaviour
                 angular.GetComponent<Angular>().LastLaser(FirePoint.GetComponent<LineRenderer>());
                 receptor = null;
                 cristal = null;
+                prisma = null;
             }
             else if (hit.collider.gameObject.tag == "Receptor")
             {
@@ -62,6 +66,7 @@ public class Weapon : MonoBehaviour
                 }
                 angular = null;
                 cristal = null;
+                prisma = null;
 
             }
             else if (hit.collider.gameObject.tag == "DirCheckF" || hit.collider.gameObject.tag == "DirCheckB")
@@ -70,6 +75,7 @@ public class Weapon : MonoBehaviour
                 cristal.GetComponent<Cristal>().LastLaser(FirePoint.GetComponent<LineRenderer>());
                 receptor = null;
                 angular = null;
+                prisma = null;
 
                 if (hit.collider.gameObject.tag == "DirCheckF")
                 {
@@ -87,6 +93,16 @@ public class Weapon : MonoBehaviour
 
                 }
 
+            }
+            else if (hit.collider.gameObject.tag == "Prisma IN")
+            {
+                prisma = hit.collider.gameObject.transform.parent.gameObject;
+                prisma.GetComponent<Prisma>().Encendido = true;
+
+                angular.GetComponent<Prisma>().LastLaser(FirePoint.GetComponent<LineRenderer>());
+                receptor = null;
+                cristal = null;
+                angular = null;
             }
 
         }
@@ -106,6 +122,10 @@ public class Weapon : MonoBehaviour
             {
                 cristal.GetComponent<Cristal>().EncendidoF = false;
                 cristal.GetComponent<Cristal>().EncendidoB = false;
+            }
+            else if (prisma != null)
+            {
+                prisma.GetComponent<Prisma>().Encendido = false;
             }
 
         }

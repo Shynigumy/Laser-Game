@@ -9,6 +9,7 @@ public class Cristal : MonoBehaviour
     public GameObject receptor;
     public GameObject FirePointCristal;
     public LineRenderer lr;
+    public GameObject prisma;
 
     public Collider DirCheckF;
     public Collider DirCheckB;
@@ -20,8 +21,10 @@ public class Cristal : MonoBehaviour
     {
         DirCheckF = gameObject.transform.GetChild(1).gameObject.GetComponent<Collider>();
         DirCheckB = gameObject.transform.GetChild(2).gameObject.GetComponent<Collider>();
-        receptor = null;
+        cristal = null;
         angular = null;
+        receptor = null;
+        prisma = null;
     }
 
     void Update()
@@ -63,6 +66,10 @@ public class Cristal : MonoBehaviour
                 cristal.GetComponent<Cristal>().EncendidoB = false;
                 cristal.GetComponent<Cristal>().EncendidoF = false;
             }
+            else if (prisma != null)
+            {
+                prisma.GetComponent<Prisma>().Encendido = false;
+            }
         }
     }
 
@@ -81,7 +88,7 @@ public class Cristal : MonoBehaviour
                     Debug.Log(angular);
                     angular.GetComponent<Angular>().EncendidoD = true;
 
-
+                    angular.GetComponent<Angular>().LastLaser(FirePointCristal.GetComponent<LineRenderer>());
                     receptor = null;
                     cristal = null;
                 }
@@ -92,6 +99,7 @@ public class Cristal : MonoBehaviour
                     angular.GetComponent<Angular>().EncendidoI = true;
                     Debug.Log("Get Laser");
 
+                    angular.GetComponent<Angular>().LastLaser(FirePointCristal.GetComponent<LineRenderer>());
                     receptor = null;
                     cristal = null;
                 }
@@ -114,7 +122,7 @@ public class Cristal : MonoBehaviour
                     Debug.Log("Entra en collider dirCheckF");
                     cristal = hit.collider.gameObject.transform.parent.gameObject;
                     cristal.GetComponent<Cristal>().EncendidoB = true;
-                    cristal.GetComponent<Cristal>().LastLaser(FirePointCristal.GetComponent<LineRenderer>());
+                    
                     
                     receptor = null;
                     angular = null;
@@ -125,8 +133,7 @@ public class Cristal : MonoBehaviour
                     Debug.Log("Entra en collider dirCheckB Cristal");
                     cristal = hit.collider.gameObject.transform.parent.gameObject;
                     cristal.GetComponent<Cristal>().EncendidoF = true;
-                    cristal.GetComponent<Cristal>().LastLaser(FirePointCristal.GetComponent<LineRenderer>());
-
+                    
                     receptor = null;
                     angular = null;
                 }
@@ -162,5 +169,4 @@ public class Cristal : MonoBehaviour
         lr = laser;
     }
 
-    
 }
