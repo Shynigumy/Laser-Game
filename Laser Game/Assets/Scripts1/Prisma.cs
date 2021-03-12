@@ -17,6 +17,9 @@ public class Prisma : MonoBehaviour
     public Material redMat;
     public Material yellowMat;
 
+    public Collider PrismaColliderR;
+    public Collider PrismaColliderL;
+
     public string Lasercolor;
 
     public bool Encendido;
@@ -37,7 +40,8 @@ public class Prisma : MonoBehaviour
     {
         if(Encendido == true)
         {
-            if (lr.material.name == "Laser_Green")
+            PrismaColliderL.gameObject.SetActive(false);
+            if (lr.material.name.Contains("Green"))
             {
                 FirePointPrismaR.GetComponent<LineRenderer>().material = blueMat;
                 FirePointPrismaL.GetComponent<LineRenderer>().material = yellowMat;
@@ -47,7 +51,7 @@ public class Prisma : MonoBehaviour
                 Fire();
                 
             }
-            if (lr.material.name == "Laser_Purple")
+            if (lr.material.name.Contains("Purple"))
             {
                 FirePointPrismaR.GetComponent<LineRenderer>().material = blueMat;
                 FirePointPrismaL.GetComponent<LineRenderer>().material = redMat;
@@ -56,7 +60,7 @@ public class Prisma : MonoBehaviour
                 FirePointPrismaL.SetActive(true);
                 Fire();
             }
-            if (lr.material.name == "Laser_Orange")
+            if (lr.material.name.Contains("Orange"))
             {
                 FirePointPrismaR.GetComponent<LineRenderer>().material = redMat;
                 FirePointPrismaL.GetComponent<LineRenderer>().material = yellowMat;
@@ -110,6 +114,7 @@ public class Prisma : MonoBehaviour
                     angular.GetComponent<Angular>().LastLaser(FirePointPrismaR.GetComponent<LineRenderer>());
                     receptor = null;
                     cristal = null;
+                    prisma = null;
                 }
                 else if (hit.collider.gameObject.tag == "DirCheckI")
                 {
@@ -119,6 +124,7 @@ public class Prisma : MonoBehaviour
                     Debug.Log("Get Laser");
 
                     angular.GetComponent<Angular>().LastLaser(FirePointPrismaR.GetComponent<LineRenderer>());
+                    prisma = null;
                     receptor = null;
                     cristal = null;
                 }
@@ -130,7 +136,7 @@ public class Prisma : MonoBehaviour
 
                 hit.collider.gameObject.GetComponent<Receptor>().Encendido = true;
                 receptor.GetComponent<Receptor>().LastLaser(FirePointPrismaR.GetComponent<LineRenderer>());
-
+                prisma = null;
                 cristal = null;
                 angular = null;
             }
@@ -142,7 +148,7 @@ public class Prisma : MonoBehaviour
                     cristal = hit.collider.gameObject.transform.parent.gameObject;
                     cristal.GetComponent<Cristal>().EncendidoB = true;
 
-
+                    prisma = null;
                     receptor = null;
                     angular = null;
 
@@ -152,14 +158,14 @@ public class Prisma : MonoBehaviour
                     Debug.Log("Entra en collider dirCheckB Cristal");
                     cristal = hit.collider.gameObject.transform.parent.gameObject;
                     cristal.GetComponent<Cristal>().EncendidoF = true;
-
+                    prisma = null;
                     receptor = null;
                     angular = null;
                 }
             }
 
         }
-        if (Physics.Raycast(FirePointPrismaR.transform.position, FirePointPrismaR.transform.forward, out hit))
+        if (Physics.Raycast(FirePointPrismaL.transform.position, FirePointPrismaL.transform.forward, out hit))
         {
             if (hit.collider.gameObject.tag == "DirCheckD" || hit.collider.gameObject.tag == "DirCheckI")
             {
@@ -170,7 +176,8 @@ public class Prisma : MonoBehaviour
                     Debug.Log(angular);
                     angular.GetComponent<Angular>().EncendidoD = true;
 
-                    angular.GetComponent<Angular>().LastLaser(FirePointPrismaR.GetComponent<LineRenderer>());
+                    angular.GetComponent<Angular>().LastLaser(FirePointPrismaL.GetComponent<LineRenderer>());
+                    prisma = null;
                     receptor = null;
                     cristal = null;
                 }
@@ -181,7 +188,8 @@ public class Prisma : MonoBehaviour
                     angular.GetComponent<Angular>().EncendidoI = true;
                     Debug.Log("Get Laser");
 
-                    angular.GetComponent<Angular>().LastLaser(FirePointPrismaR.GetComponent<LineRenderer>());
+                    angular.GetComponent<Angular>().LastLaser(FirePointPrismaL.GetComponent<LineRenderer>());
+                    prisma = null;
                     receptor = null;
                     cristal = null;
                 }
@@ -192,8 +200,8 @@ public class Prisma : MonoBehaviour
                 receptor = hit.collider.gameObject;
 
                 hit.collider.gameObject.GetComponent<Receptor>().Encendido = true;
-                receptor.GetComponent<Receptor>().LastLaser(FirePointPrismaR.GetComponent<LineRenderer>());
-
+                receptor.GetComponent<Receptor>().LastLaser(FirePointPrismaL.GetComponent<LineRenderer>());
+                prisma = null;
                 cristal = null;
                 angular = null;
             }
@@ -208,14 +216,14 @@ public class Prisma : MonoBehaviour
 
                     receptor = null;
                     angular = null;
-
+                    prisma = null;
                 }
                 else if (hit.collider.gameObject.tag == "DirCheckB")
                 {
                     Debug.Log("Entra en collider dirCheckB Cristal");
                     cristal = hit.collider.gameObject.transform.parent.gameObject;
                     cristal.GetComponent<Cristal>().EncendidoF = true;
-
+                    prisma = null;
                     receptor = null;
                     angular = null;
                 }
@@ -226,7 +234,7 @@ public class Prisma : MonoBehaviour
 
 
 
-        public void LastLaser(LineRenderer laser)
+    public void LastLaser(LineRenderer laser)
     {
         lr = laser;
     }

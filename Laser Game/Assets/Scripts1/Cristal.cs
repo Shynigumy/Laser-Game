@@ -138,7 +138,18 @@ public class Cristal : MonoBehaviour
                     angular = null;
                 }
             }
+            else if (hit.collider.gameObject.tag == "Prisma IN")
+            {
+                Debug.Log(prisma);
+                prisma = hit.collider.gameObject;
+                Debug.Log(prisma);
+                prisma.GetComponent<Prisma>().Encendido = true;
 
+                prisma.GetComponent<Prisma>().LastLaser(FirePointCristal.GetComponent<LineRenderer>());
+                receptor = null;
+                cristal = null;
+                angular = null;
+            }
         }
         else
         {
