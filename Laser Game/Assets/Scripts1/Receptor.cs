@@ -15,12 +15,20 @@ public class Receptor : MonoBehaviour
     {
         if (Encendido == true)
         {
-            Debug.Log(lr.material.ToString());
-
-            if (lr.material.name == color)
+            
+            if (lr.material.name.Contains("Blue"))
             {
-                Debug.Log("Win");
-                
+
+
+            }
+            if (lr.material.name.Contains("Yellow"))
+            {
+
+            }
+
+            if (lr.material.name.Contains("Orange"))
+            {
+
             }
         }
         else

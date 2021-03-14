@@ -16,6 +16,7 @@ public class Angular : MonoBehaviour
     public Collider DirCheckD;
     public Collider DirCheckI;
 
+
     public bool EncendidoD = false;
     public bool EncendidoI = false;
     void Start()

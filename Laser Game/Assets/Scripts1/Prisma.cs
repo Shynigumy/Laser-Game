@@ -33,6 +33,8 @@ public class Prisma : MonoBehaviour
         prisma = null;
 
         Encendido = false;
+        PrismaColliderR.gameObject.SetActive(true);
+        PrismaColliderL.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class Prisma : MonoBehaviour
     {
         if(Encendido == true)
         {
+            PrismaColliderR.gameObject.SetActive(false);
             PrismaColliderL.gameObject.SetActive(false);
             if (lr.material.name.Contains("Green"))
             {
@@ -75,6 +78,9 @@ public class Prisma : MonoBehaviour
         {
             FirePointPrismaR.SetActive(false);
             FirePointPrismaL.SetActive(false);
+
+            PrismaColliderR.gameObject.SetActive(true);
+            PrismaColliderL.gameObject.SetActive(true);
 
             if (angular != null)
             {
