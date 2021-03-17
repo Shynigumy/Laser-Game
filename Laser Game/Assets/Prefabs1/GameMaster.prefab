@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2518292141235173671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2518292141235173721}
+  - component: {fileID: 2518292141235173670}
+  m_Layer: 0
+  m_Name: GameMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2518292141235173721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518292141235173671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2518292141235173670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2518292141235173671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c728c701a1d4f4f96b465d13cb4115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angularPrefab: {fileID: 6806107054625595725, guid: aba7c720c932ea440824a2e7355b07f9, type: 3}
+  prismaPrefab: {fileID: 6156878420312718969, guid: 58a7fdebe2719da48a9eb7885533204f, type: 3}
+  bluecristalPrefab: {fileID: 7028921153019461169, guid: 8344acbfe56c2984d906e529965d3db0, type: 3}
+  redcristalPrefab: {fileID: 6913558026446744831, guid: 72de2eae5125ce44889583e2d34e03f3, type: 3}
+  yellowcristalPrefab: {fileID: 6058066162640807623, guid: 810a58f499cc0bb49ae0e74e30169bb9, type: 3}

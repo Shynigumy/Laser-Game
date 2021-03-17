@@ -96,9 +96,7 @@ public class Weapon : MonoBehaviour
             }
             else if (hit.collider.gameObject.tag == "Prisma IN")
             {
-                Debug.Log(prisma);
                 prisma = hit.collider.gameObject;
-                Debug.Log(prisma);
                 prisma.GetComponent<Prisma>().Encendido = true;
 
                 prisma.GetComponent<Prisma>().LastLaser(FirePoint.GetComponent<LineRenderer>());
@@ -106,32 +104,118 @@ public class Weapon : MonoBehaviour
                 cristal = null;
                 angular = null;
             }
+            else if(hit.collider.gameObject.tag == "Wall")
+            {
+                Desactivar();
+            }
 
         }
         else
         {
-            Debug.Log("Sale");
-            if (angular != null)
-            {
-                angular.GetComponent<Angular>().EncendidoD = false;
-                angular.GetComponent<Angular>().EncendidoI = false;
-            }
-            else if (receptor != null)
-            {
-                receptor.GetComponent<Receptor>().Encendido = false;
-            }
-            else if (cristal != null)
-            {
-                cristal.GetComponent<Cristal>().EncendidoF = false;
-                cristal.GetComponent<Cristal>().EncendidoB = false;
-            }
-            else if (prisma != null)
-            {
-                prisma.GetComponent<Prisma>().Encendido = false;
-            }
+            Desactivar();
+        }
+    }
+    public void DesactivarReceptorCristal()
+    {
 
+        if (receptor != null)
+        {
+            receptor.GetComponent<Receptor>().Encendido = false;
+        }
+        if (cristal != null)
+        {
+            Debug.Log("False");
+            cristal.GetComponent<Cristal>().EncendidoF = false;
+            cristal.GetComponent<Cristal>().EncendidoB = false;
+        }
+    }
+    public void DesactivarAngularPrisma()
+    {
+
+        if (angular != null)
+        {
+            angular.GetComponent<Angular>().EncendidoD = false;
+            angular.GetComponent<Angular>().EncendidoI = false;
+        }
+        if (prisma != null)
+        {
+            prisma.GetComponent<Prisma>().Encendido = false;
         }
 
     }
+    public void DesactivarReceptorPrisma()
+    {
 
+        if (receptor != null)
+        {
+            receptor.GetComponent<Receptor>().Encendido = false;
+        }
+        if (prisma != null)
+        {
+            prisma.GetComponent<Prisma>().Encendido = false;
+        }
+
+    }
+    public void DesactivarCristalPrisma()
+    {
+        if (prisma != null)
+        {
+            prisma.GetComponent<Prisma>().Encendido = false;
+        }
+
+        if (cristal != null)
+        {
+            Debug.Log("False");
+            cristal.GetComponent<Cristal>().EncendidoF = false;
+            cristal.GetComponent<Cristal>().EncendidoB = false;
+        }
+    }
+    public void DesactivarAngularCristal()
+    {
+        if (angular != null)
+        {
+            angular.GetComponent<Angular>().EncendidoD = false;
+            angular.GetComponent<Angular>().EncendidoI = false;
+        }
+        if (cristal != null)
+        {
+            Debug.Log("False");
+            cristal.GetComponent<Cristal>().EncendidoF = false;
+            cristal.GetComponent<Cristal>().EncendidoB = false;
+        }
+    }
+    public void DesactivarAngularReceptor()
+    {
+        if (angular != null)
+        {
+            angular.GetComponent<Angular>().EncendidoD = false;
+            angular.GetComponent<Angular>().EncendidoI = false;
+        }
+        if (receptor != null)
+        {
+            receptor.GetComponent<Receptor>().Encendido = false;
+        }
+    }
+    public void Desactivar()
+    {
+        if (angular != null)
+        {
+            angular.GetComponent<Angular>().EncendidoD = false;
+            angular.GetComponent<Angular>().EncendidoI = false;
+        }
+        else if (receptor != null)
+        {
+            receptor.GetComponent<Receptor>().Encendido = false;
+        }
+        else if (cristal != null)
+        {
+            Debug.Log("False");
+            cristal.GetComponent<Cristal>().EncendidoF = false;
+            cristal.GetComponent<Cristal>().EncendidoB = false;
+        }
+        else if (prisma != null)
+        {
+            prisma.GetComponent<Prisma>().Encendido = false;
+        }
+    }
 }

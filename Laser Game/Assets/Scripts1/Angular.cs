@@ -105,7 +105,6 @@ public class Angular : MonoBehaviour
                 {
                     angular = hit.collider.gameObject.transform.parent.gameObject;
                     angular.GetComponent<Angular>().EncendidoI = true;
-                    Debug.Log("Get Laser");
                     angular.GetComponent<Angular>().LastLaser(FirePointAngular.GetComponent<LineRenderer>());
 
                     FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
@@ -149,7 +148,6 @@ public class Angular : MonoBehaviour
             }
             else if (hit.collider.gameObject.tag == "DirCheckB")
             {
-                Debug.Log("Entra en el DirCheckB");
                 cristal = hit.collider.gameObject.transform.parent.gameObject;
 
                 cristal.GetComponent<Cristal>().EncendidoF = true;
@@ -177,13 +175,15 @@ public class Angular : MonoBehaviour
                 cristal = null;
                 angular = null;
             }
-            else
+            else if (hit.collider.gameObject.tag == "Wall")
             {
                 Desactivar();
             }
-
         }
-
+        else
+        {
+            Desactivar();
+        }
     }
     public void LastLaser(LineRenderer laser)
     {

@@ -6,26 +6,33 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
 
+    public GameObject angularPrefab;
+    public GameObject prismaPrefab;
+    public GameObject bluecristalPrefab;
+    public GameObject redcristalPrefab;
+    public GameObject yellowcristalPrefab;
+
     private void Awake()
     {
         if(instance != null)
         {
-            Debug.LogError("More than one BuildMAnager in scene");
+            Debug.LogError("More than one BuildManager in scene");
             return;
         }
         instance = this;
     }
-    public GameObject angularPrefab;
 
-    private void Start()
+
+    private GameObject componentToBuild;
+
+
+    public GameObject GetComponentToBuild()
     {
-        angularToBuild = angularPrefab;
+        return componentToBuild;
     }
 
-    private GameObject angularToBuild;
-
-    public GameObject GetAngularToBuild()
+    public void SetComponentToBuild(GameObject component)
     {
-        return angularToBuild;
+        componentToBuild = component;
     }
 }
