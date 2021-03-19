@@ -113,4 +113,11 @@ public class MainMenu : MonoBehaviour
     {
         Screen.fullScreen = isFullscreen;
     }
+
+    // Seleccion de Nivel
+
+    public void LoadScene(int SceneID)
+    {
+        SceneManager.LoadScene(SceneID);        
+    }
 }

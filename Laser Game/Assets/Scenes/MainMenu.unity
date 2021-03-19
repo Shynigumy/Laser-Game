@@ -1189,14 +1189,14 @@ PrefabInstance:
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1158319399}
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResetScene
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2115,14 +2115,14 @@ PrefabInstance:
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1158319399}
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResetScene
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2130,7 +2130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
@@ -5715,14 +5715,14 @@ PrefabInstance:
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1158319399}
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResetScene
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5730,7 +5730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4829339839491436035, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46f3ac9a3127d464a9e03343b144806f, type: 3}
