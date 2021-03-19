@@ -10,6 +10,8 @@ public class Angular : MonoBehaviour
     public GameObject FirePointAngular;
     public GameObject prisma;
 
+    public GameObject MenuRotation;
+
     public GameObject Empty;
     public LineRenderer lr;
 
@@ -29,6 +31,10 @@ public class Angular : MonoBehaviour
         receptor = null;
         prisma = null;
 
+    }
+    private void Awake()
+    {
+        MenuRotation.gameObject.SetActive(false);
     }
 
     void Update()
@@ -77,7 +83,9 @@ public class Angular : MonoBehaviour
                 prisma.GetComponent<Prisma>().Encendido = false;
             }
         }
+        
     }
+
 
     void Fire()
     {

@@ -293,6 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3554121646511914126}
+  - component: {fileID: 5930578988497161428}
   m_Layer: 0
   m_Name: CristalBlue
   m_TagString: Untagged
@@ -307,7 +308,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7028921153019461169}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.883774, y: -0.4200015, z: -8.996083}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
@@ -315,6 +316,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5930578988497161428
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7028921153019461169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6814053, y: 0.05445838, z: 0.7497549}
+  m_Center: {x: -0.0024645329, y: 0.76285887, z: -0.011264756}
 --- !u!1 &8172190855022203960
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +446,7 @@ BoxCollider:
   m_GameObject: {fileID: 8172190855022203960}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.44375658, y: 0.0483248, z: 0.3372744}
   m_Center: {x: -0.010185063, y: 0, z: 0.049441606}
