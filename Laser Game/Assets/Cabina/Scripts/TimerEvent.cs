@@ -25,6 +25,7 @@ public class TimerEvent : MonoBehaviour
     public GameObject NaveRojo;
     public GameObject ControlesAzul;
     public GameObject ControlesRojo;
+    public GameObject TextoAlerta;
 
     public GameObject Camara;
 
@@ -61,6 +62,7 @@ public class TimerEvent : MonoBehaviour
             LuzRoja2.GetComponent<LucesRojasParpadeo>().enabled = true;
             SonidoAlarma.GetComponent<AudioSource>().enabled = true;
             Escombros.SetActive(true);
+            TextoAlerta.SetActive(true);
         }
         
         if (tiempo >= TiempoFinal && Input.GetKeyDown(KeyCode.Space))
@@ -80,7 +82,7 @@ public class TimerEvent : MonoBehaviour
 
         if ( tiempoTransicion >= tiempoTransicionFinal)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 }
