@@ -109,3 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.9622642, g: 0.31318974, b: 0.31318974, a: 0}
+  nodos: {fileID: 0}
+  Ocupado: 0

@@ -12,6 +12,7 @@ public class BuildManager : MonoBehaviour
     public GameObject redcristalPrefab;
     public GameObject yellowcristalPrefab;
 
+
     private void Awake()
     {
         if(instance != null)
@@ -34,5 +35,6 @@ public class BuildManager : MonoBehaviour
     public void SetComponentToBuild(GameObject component)
     {
         componentToBuild = component;
+
     }
 }

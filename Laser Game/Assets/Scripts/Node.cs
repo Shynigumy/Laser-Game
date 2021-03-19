@@ -14,6 +14,7 @@ public class Node : MonoBehaviour
 
     private Renderer rend;
     private Color startColor;
+    public GameObject nodos;
 
     public bool Ocupado;
 
@@ -39,6 +40,7 @@ public class Node : MonoBehaviour
         GameObject componentToBuild = BuildManager.instance.GetComponentToBuild();
         Component = (GameObject)Instantiate(componentToBuild, transform.position, transform.rotation);
         Ocupado = true;
+        nodos.gameObject.SetActive(false);
     }
 
     void OnMouseEnter()
