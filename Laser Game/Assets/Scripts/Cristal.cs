@@ -160,11 +160,14 @@ public class Cristal : MonoBehaviour
             else if(hit.collider.gameObject.tag == "Wall")
             {
                 Desactivar();
+                FirePointCristal.GetComponent<LineRenderer>().material = lr.material;
             }
         }
         else
         {
+
             Desactivar();
+            FirePointCristal.GetComponent<LineRenderer>().material = lr.material;
         }
 
     }

@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class ObjectClicker : MonoBehaviour
 {
-
-
+    public GameObject RotMenu;
+    public Collider TopCollider;
+    private void Start()
+    {
+        RotMenu.gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -18,15 +22,20 @@ public class ObjectClicker : MonoBehaviour
             {
                 if (hit.transform != null)
                 {
-                    PrintName(hit.transform.gameObject);
+                    if(hit.transform.tag == "Clicker")
+                    {
+                        RotMenu.gameObject.SetActive(true);
+                        TopCollider.GetComponent<Collider>().gameObject.SetActive(false);
+                    }
                 }
-
+                else
+                {
+                    RotMenu.gameObject.SetActive(false);
+                    TopCollider.GetComponent<Collider>().gameObject.SetActive(true);
+                }
             }
         }
     
     }
-    private void PrintName(GameObject go)
-    {
-        print(go.name);
-    }
+
 }

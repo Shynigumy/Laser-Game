@@ -106,6 +106,7 @@ public class Weapon : MonoBehaviour
             }
             else if(hit.collider.gameObject.tag == "Wall")
             {
+
                 Desactivar();
             }
 

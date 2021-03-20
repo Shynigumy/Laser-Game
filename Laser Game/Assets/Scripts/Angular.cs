@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Angular : MonoBehaviour
 {
+    public GameObject parent;
     public GameObject cristal;
     public GameObject angular;
     public GameObject receptor;
@@ -186,12 +187,31 @@ public class Angular : MonoBehaviour
             else if (hit.collider.gameObject.tag == "Wall")
             {
                 Desactivar();
+                FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
             }
         }
         else
         {
             Desactivar();
+            FirePointAngular.GetComponent<LineRenderer>().material = lr.material;
         }
+    }
+    public void RotacionHoraria()
+    {
+        EncendidoD = false;
+        EncendidoI = false;
+        Desactivar();
+        parent.transform.localRotation = new Quaternion(parent.transform.rotation.x, parent.transform.rotation.y + 270, parent.transform.rotation.z, parent.transform.rotation.w);
+        Debug.Log("H");
+    }
+    public void RotacionAntiHoraria()
+    {
+        EncendidoD = false;
+        EncendidoI = false;
+        Desactivar();
+        parent.transform.localRotation = new Quaternion(parent.transform.rotation.x, parent.transform.rotation.y - 270, parent.transform.rotation.z, parent.transform.rotation.w);
+        Debug.Log("A");
+
     }
     public void LastLaser(LineRenderer laser)
     {

@@ -175,6 +175,10 @@ public class Prisma : MonoBehaviour
                     angular = null;
                 }
             }
+            else if (hit.collider.gameObject.tag == "Wall")
+            {
+                Desactivar();
+            }
 
         }
         if (Physics.Raycast(FirePointPrismaL.transform.position, FirePointPrismaL.transform.forward, out hit))
