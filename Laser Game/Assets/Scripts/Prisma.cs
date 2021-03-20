@@ -360,7 +360,6 @@ public class Prisma : MonoBehaviour
         }
         else if (cristal != null)
         {
-            Debug.Log("False");
             cristal.GetComponent<Cristal>().EncendidoF = false;
             cristal.GetComponent<Cristal>().EncendidoB = false;
         }

@@ -79,14 +79,12 @@ public class Weapon : MonoBehaviour
 
                 if (hit.collider.gameObject.tag == "DirCheckF")
                 {
-                    Debug.Log("Entra en collider dirCheckF Weapon");
                     cristal.GetComponent<Cristal>().EncendidoB = true;
                     cristal.transform.GetChild(2).gameObject.SetActive(false);
 
                 }
                 else if (hit.collider.gameObject.tag == "DirCheckB")
                 {
-                    Debug.Log("Entra en collider dirCheckB Weapon");
 
                     cristal.GetComponent<Cristal>().EncendidoF = true;
                     cristal.transform.GetChild(1).gameObject.SetActive(false);
@@ -210,7 +208,6 @@ public class Weapon : MonoBehaviour
         }
         else if (cristal != null)
         {
-            Debug.Log("False");
             cristal.GetComponent<Cristal>().EncendidoF = false;
             cristal.GetComponent<Cristal>().EncendidoB = false;
         }

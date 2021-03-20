@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Angular : MonoBehaviour
 {
-    public GameObject parent;
+    public GameObject Parent;
     public GameObject cristal;
     public GameObject angular;
     public GameObject receptor;
@@ -201,16 +201,15 @@ public class Angular : MonoBehaviour
         EncendidoD = false;
         EncendidoI = false;
         Desactivar();
-        parent.transform.localRotation = new Quaternion(parent.transform.rotation.x, parent.transform.rotation.y + 270, parent.transform.rotation.z, parent.transform.rotation.w);
-        Debug.Log("H");
+        Parent.transform.eulerAngles = new Vector3(Parent.transform.eulerAngles.x, Parent.transform.eulerAngles.y + 90, Parent.transform.eulerAngles.z);
+
     }
     public void RotacionAntiHoraria()
     {
         EncendidoD = false;
         EncendidoI = false;
         Desactivar();
-        parent.transform.localRotation = new Quaternion(parent.transform.rotation.x, parent.transform.rotation.y - 270, parent.transform.rotation.z, parent.transform.rotation.w);
-        Debug.Log("A");
+        Parent.transform.eulerAngles = new Vector3(Parent.transform.eulerAngles.x, Parent.transform.eulerAngles.y - 90, Parent.transform.eulerAngles.z);
 
     }
     public void LastLaser(LineRenderer laser)

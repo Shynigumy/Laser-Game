@@ -11,6 +11,10 @@ public class Cristal : MonoBehaviour
     public LineRenderer lr;
     public GameObject prisma;
 
+    public GameObject Parent;
+
+    public GameObject MenuRotation;
+
     public Collider DirCheckF;
     public Collider DirCheckB;
 
@@ -27,6 +31,10 @@ public class Cristal : MonoBehaviour
         prisma = null;
     }
 
+    private void Awake()
+    {
+        MenuRotation.gameObject.SetActive(false);
+    }
     void Update()
     {
 
@@ -121,7 +129,6 @@ public class Cristal : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "DirCheckF")
                 {
-                    Debug.Log("Entra en collider dirCheckF");
                     cristal = hit.collider.gameObject.transform.parent.gameObject;
                     cristal.GetComponent<Cristal>().EncendidoB = true;
 
@@ -133,7 +140,6 @@ public class Cristal : MonoBehaviour
                 }
                 else if (hit.collider.gameObject.tag == "DirCheckB")
                 {
-                    Debug.Log("Entra en collider dirCheckB Cristal");
                     cristal = hit.collider.gameObject.transform.parent.gameObject;
                     cristal.GetComponent<Cristal>().EncendidoF = true;
 
@@ -160,16 +166,29 @@ public class Cristal : MonoBehaviour
             else if(hit.collider.gameObject.tag == "Wall")
             {
                 Desactivar();
-                FirePointCristal.GetComponent<LineRenderer>().material = lr.material;
             }
         }
         else
         {
-
             Desactivar();
-            FirePointCristal.GetComponent<LineRenderer>().material = lr.material;
         }
 
+    }
+    public void RotacionHoraria()
+    {
+        EncendidoB = false;
+        EncendidoF = false;
+        Desactivar();
+        Parent.transform.eulerAngles = new Vector3(Parent.transform.eulerAngles.x, Parent.transform.eulerAngles.y + 90, Parent.transform.eulerAngles.z);
+        Debug.Log("H");
+    }
+    public void RotacionAntiHoraria()
+    {
+        EncendidoB = false;
+        EncendidoF = false;
+        Desactivar();
+        Parent.transform.eulerAngles = new Vector3(Parent.transform.eulerAngles.x, Parent.transform.eulerAngles.y - 90, Parent.transform.eulerAngles.z);
+        Debug.Log("H");
     }
     public void LastLaser(LineRenderer laser)
     {
@@ -269,7 +288,6 @@ public class Cristal : MonoBehaviour
         }
         else if (cristal != null)
         {
-            Debug.Log("False");
             cristal.GetComponent<Cristal>().EncendidoF = false;
             cristal.GetComponent<Cristal>().EncendidoB = false;
         }
