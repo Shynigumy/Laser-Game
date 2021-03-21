@@ -15,9 +15,9 @@ public class GameManager : MonoBehaviour
 
     //The real management part
 
-    public void ResetScene(int SceneID)
+    public void ResetScene()
     {
-        SceneManager.LoadScene(SceneID);
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
         isPaused = false;
     }
 
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.R))
         {
-            ResetScene(SceneManager.GetActiveScene().buildIndex);
+            ResetScene();
         }
 
         if (isPaused)
