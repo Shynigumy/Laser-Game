@@ -409,6 +409,8 @@ GameObject:
   - component: {fileID: 8978776828771886282}
   - component: {fileID: 8978776828771886293}
   - component: {fileID: 1900479374}
+  - component: {fileID: 49253237}
+  - component: {fileID: 49253243}
   m_Layer: 0
   m_Name: inGameCamera
   m_TagString: MainCamera
@@ -641,6 +643,39 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &49253237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978776828771886281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61f4f0b86ddfa64181b74731780acde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 0.075
+  duration: 1
+  cam: {fileID: 8978776828771886292}
+  slowDownAmount: 0.7
+  shouldShake: 0
+--- !u!114 &49253243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978776828771886281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2ea28963358234abd103fcf982da0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TiempoExplocion: 10
+  tiempo: 0
+  temblor: {fileID: 8978776828771886281}
+  SonidoExplosion: {fileID: 0}
 --- !u!1 &8978776829252319455
 GameObject:
   m_ObjectHideFlags: 0
