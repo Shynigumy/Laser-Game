@@ -1323,6 +1323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nodes
       objectReference: {fileID: 0}
+    - target: {fileID: 4532975774176067512, guid: 7eb78f1b2e50cc646816b13e04ab4553, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4532975774176067513, guid: 7eb78f1b2e50cc646816b13e04ab4553, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
