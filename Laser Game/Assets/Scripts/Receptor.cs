@@ -12,7 +12,6 @@ public class Receptor : MonoBehaviour
     public string RecievedColor;
     public GameObject WinCanvas;
 
-
     // Update is called once per frame
     void Update()
     {
