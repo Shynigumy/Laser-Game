@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: 0.005
   duration: 1
-  camera: {fileID: 1125322773171831042}
+  cam: {fileID: 0}
   slowDownAmount: 0
   shouldShake: 1
 --- !u!114 &1125322773171831044
@@ -213,9 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPos: {fileID: 7829716517204672014}
   endPos: {fileID: 7829716517597150427}
-  journeyTime: 1
-  speed: 0.225
-  repeatable: 0
+  speed: 0.1
 --- !u!114 &1125322773171831045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,7 +1280,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6948267931480376154}
-  m_LocalRotation: {x: -0, y: -0.7869513, z: -0, w: 0.6170151}
+  m_LocalRotation: {x: 0, y: -0.78695124, z: 0, w: 0.61701524}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1323,7 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   X: 15
-  Y: -15
+  Y: -14
   Z: -10
 --- !u!1 &7829716516037239020
 GameObject:
@@ -1717,7 +1715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7829716517133282176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.481, z: 0.599}
+  m_LocalPosition: {x: -0, y: 0.471, z: 0.599}
   m_LocalScale: {x: 0.17, y: 0.17, z: 0.17}
   m_Children:
   - {fileID: 7829716516037239021}

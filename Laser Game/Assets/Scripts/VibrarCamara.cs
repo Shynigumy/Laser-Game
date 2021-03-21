@@ -6,7 +6,7 @@ public class VibrarCamara : MonoBehaviour
 {
 	public float power = 0.005f;
 	public float duration = 1.0f;
-	public Transform camera;
+	public Transform cam;
 	public float slowDownAmount = 0.0f;
 	public bool shouldShake;
 
@@ -16,8 +16,8 @@ public class VibrarCamara : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		camera = Camera.main.transform;
-		startPosition = camera.localPosition;
+		cam = Camera.main.transform;
+		startPosition = cam.localPosition;
 		initialDuration = duration;
 	}
 
@@ -28,14 +28,14 @@ public class VibrarCamara : MonoBehaviour
 		{
 			if (duration > 0)
 			{
-				camera.localPosition = startPosition + Random.insideUnitSphere * power;
+				cam.localPosition = startPosition + Random.insideUnitSphere * power;
 				duration -= Time.deltaTime * slowDownAmount;
 			}
 			else
 			{
 				shouldShake = false;
 				duration = initialDuration;
-				camera.localPosition = startPosition;
+				cam.localPosition = startPosition;
 			}
 		}
 	}

@@ -5541,9 +5541,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadApagado: 0.5
-  TiempoExplocion: 19.5
-  TiempoAlerta: 21
-  TiempoFinal: 27
+  TiempoExplocion: 12
+  TiempoAlerta: 15
+  TiempoFinal: 20
   tiempo: 0
   tiempoTransicion: 0
   tiempoTransicionFinal: 3
@@ -5628,10 +5628,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 241077232590729681, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
-      propertyPath: Y
-      value: -14
-      objectReference: {fileID: 0}
     - target: {fileID: 1125322773171831045, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
       propertyPath: volumeTrigger
       value: 
