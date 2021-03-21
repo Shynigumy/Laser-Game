@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Node : MonoBehaviour
 {
@@ -42,22 +43,32 @@ public class Node : MonoBehaviour
         if (Component.name.Contains("Angular"))
         {
             ShopGO.GetComponent<Shop>().limitAngular--;
+            ShopGO.GetComponent<Shop>().limitAux--;
+            ShopGO.GetComponent<Shop>().angularLimit.text = ShopGO.GetComponent<Shop>().limitAux.ToString();
         }
         if (Component.name.Contains("prisma"))
         {
             ShopGO.GetComponent<Shop>().limitPrisma--;
+            ShopGO.GetComponent<Shop>().limitAux--;
+            ShopGO.GetComponent<Shop>().prismaLimit.text = ShopGO.GetComponent<Shop>().limitAux.ToString();
         }
         if (Component.name.Contains("Blue"))
         {
             ShopGO.GetComponent<Shop>().limitBlueCristal--;
+            ShopGO.GetComponent<Shop>().limitAux--;
+            ShopGO.GetComponent<Shop>().cristalBlueLimit.text = ShopGO.GetComponent<Shop>().limitAux.ToString();
         }
         if (Component.name.Contains("Red"))
         {
             ShopGO.GetComponent<Shop>().limitRedCristal--;
+            ShopGO.GetComponent<Shop>().limitAux--;
+            ShopGO.GetComponent<Shop>().cristalRedLimit.text = ShopGO.GetComponent<Shop>().limitAux.ToString();
         }
         if (Component.name.Contains("Yellow"))
         {
             ShopGO.GetComponent<Shop>().limitYellowCristal--;
+            ShopGO.GetComponent<Shop>().limitAux--;
+            ShopGO.GetComponent<Shop>().cristalYellowLimit.text = ShopGO.GetComponent<Shop>().limitAux.ToString();
         }
         Ocupado = true;
         nodos.gameObject.SetActive(false);
