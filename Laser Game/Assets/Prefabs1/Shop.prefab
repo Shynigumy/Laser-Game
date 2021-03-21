@@ -545,10 +545,11 @@ MonoBehaviour:
   limitRedCristal: 0
   limitYellowCristal: 0
   angularLimit: {fileID: 738238969}
-  prismaLimit: {fileID: 0}
-  cristalBlueLimit: {fileID: 0}
-  cristalRedLimit: {fileID: 0}
-  cristalYellowLimit: {fileID: 0}
+  prismaLimit: {fileID: 7956286271238060172}
+  cristalBlueLimit: {fileID: 5522056493537008611}
+  cristalRedLimit: {fileID: 6335300773248154558}
+  cristalYellowLimit: {fileID: 6192563584258105923}
+  limitAux: 0
   nodos: {fileID: 0}
 --- !u!1 &531292349280305046
 GameObject:

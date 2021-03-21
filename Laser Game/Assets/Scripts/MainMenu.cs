@@ -94,6 +94,12 @@ public class MainMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
     public void SetSFXLvl(float sfxLvl)
     {
         Master.SetFloat("sfxVol", sfxLvl);

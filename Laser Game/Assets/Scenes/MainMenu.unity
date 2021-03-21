@@ -571,7 +571,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1158319399}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SetResolution
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &320682151
 MonoBehaviour:
@@ -2501,10 +2513,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1117413509}
   m_HandleRect: {fileID: 1767876390}
   m_Direction: 0
-  m_MinValue: -20
+  m_MinValue: -50
   m_MaxValue: 0
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: -10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3890,10 +3902,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1831377277}
   m_HandleRect: {fileID: 335650901}
   m_Direction: 0
-  m_MinValue: -20
+  m_MinValue: -50
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: -2
+  m_Value: -10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
