@@ -10,6 +10,8 @@ public class Receptor : MonoBehaviour
     private LineRenderer lr;
     public string WinColor;
     public string RecievedColor;
+    public GameObject WinCanvas;
+
 
     // Update is called once per frame
     void Update()
@@ -22,7 +24,7 @@ public class Receptor : MonoBehaviour
                 RecievedColor = ("Blue");
                 if(RecievedColor == "Blue" && WinColor == "Blue")
                 {
-                    Debug.Log("Win");
+                    WinCanvas.gameObject.SetActive(true);
                 }
 
             }
@@ -31,7 +33,7 @@ public class Receptor : MonoBehaviour
                 RecievedColor = ("Yellow");
                 if (RecievedColor == "Yellow" && WinColor == "Yellow")
                 {
-                    Debug.Log("Win");
+                    WinCanvas.gameObject.SetActive(true);
                 }
             }
             if (lr.material.name.Contains("Purple"))
@@ -39,7 +41,7 @@ public class Receptor : MonoBehaviour
                 RecievedColor = ("Purple");
                 if (RecievedColor == "Purple" && WinColor == "Purple")
                 {
-                    Debug.Log("Win");
+                    WinCanvas.gameObject.SetActive(true);
                 }
             }
             if (lr.material.name.Contains("Red"))
@@ -47,7 +49,7 @@ public class Receptor : MonoBehaviour
                 RecievedColor = ("Red");
                 if (RecievedColor == "Red" && WinColor == "Red")
                 {
-                    Debug.Log("Win");
+                    WinCanvas.gameObject.SetActive(true);
                 }
             }
 
@@ -56,7 +58,7 @@ public class Receptor : MonoBehaviour
                 RecievedColor = ("Green");
                 if (RecievedColor == "Green" && WinColor == "Green")
                 {
-                    Debug.Log("Win");
+                    WinCanvas.gameObject.SetActive(true);
                 }
             }
             if (lr.material.name.Contains("Orange"))
@@ -64,7 +66,7 @@ public class Receptor : MonoBehaviour
                 RecievedColor = ("Orange");
                 if (RecievedColor == "Orange" && WinColor == "Orange")
                 {
-                    Debug.Log("Win");
+                    WinCanvas.gameObject.SetActive(true);
                 }
             }
         }

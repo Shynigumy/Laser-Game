@@ -142,7 +142,6 @@ public class Angular : MonoBehaviour
             }
             else if (hit.collider.gameObject.tag == "DirCheckF")
             {
-                Debug.Log("Entra en el DirCheckF");
                 cristal = hit.collider.gameObject.transform.parent.gameObject;
 
                 cristal.GetComponent<Cristal>().EncendidoB = true;
@@ -173,9 +172,7 @@ public class Angular : MonoBehaviour
             }
             else if (hit.collider.gameObject.tag == "Prisma IN")
             {
-                Debug.Log(prisma);
                 prisma = hit.collider.gameObject;
-                Debug.Log(prisma);
                 prisma.GetComponent<Prisma>().Encendido = true;
                 DesactivarReceptorCristal();
                 DesactivarAngularCristal();
@@ -227,7 +224,6 @@ public class Angular : MonoBehaviour
         }
         if (cristal != null)
         {
-            Debug.Log("False");
             cristal.GetComponent<Cristal>().EncendidoF = false;
             cristal.GetComponent<Cristal>().EncendidoB = false;
         }
@@ -271,7 +267,6 @@ public class Angular : MonoBehaviour
 
         if (cristal != null)
         {
-            Debug.Log("False");
             cristal.GetComponent<Cristal>().EncendidoF = false;
             cristal.GetComponent<Cristal>().EncendidoB = false;
         }
@@ -285,7 +280,6 @@ public class Angular : MonoBehaviour
         }
         if (cristal != null)
         {
-            Debug.Log("False");
             cristal.GetComponent<Cristal>().EncendidoF = false;
             cristal.GetComponent<Cristal>().EncendidoB = false;
         }
@@ -315,7 +309,6 @@ public class Angular : MonoBehaviour
         }
         else if (cristal != null)
         {
-            Debug.Log("False");
             cristal.GetComponent<Cristal>().EncendidoF = false;
             cristal.GetComponent<Cristal>().EncendidoB = false;
         }

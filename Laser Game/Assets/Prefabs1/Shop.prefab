@@ -456,6 +456,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1713b8e4d1e84d64b96b883a72b05b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limitAngular: 2
+  limitPrisma: 1
+  limitBlueCristal: 0
+  limitRedCristal: 0
+  limitYellowCristal: 0
   nodos: {fileID: 0}
 --- !u!1 &531292349280305046
 GameObject:

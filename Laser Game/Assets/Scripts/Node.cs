@@ -10,7 +10,7 @@ public class Node : MonoBehaviour
     private GameObject Angular;
     private GameObject Cristal;
     private GameObject Prisma;
-
+    public GameObject ShopGO;
 
     private Renderer rend;
     private Color startColor;
@@ -39,6 +39,26 @@ public class Node : MonoBehaviour
 
         GameObject componentToBuild = BuildManager.instance.GetComponentToBuild();
         Component = (GameObject)Instantiate(componentToBuild, transform.position, transform.rotation);
+        if (Component.name.Contains("Angular"))
+        {
+            ShopGO.GetComponent<Shop>().limitAngular--;
+        }
+        if (Component.name.Contains("prisma"))
+        {
+            ShopGO.GetComponent<Shop>().limitPrisma--;
+        }
+        if (Component.name.Contains("Blue"))
+        {
+            ShopGO.GetComponent<Shop>().limitBlueCristal--;
+        }
+        if (Component.name.Contains("Red"))
+        {
+            ShopGO.GetComponent<Shop>().limitRedCristal--;
+        }
+        if (Component.name.Contains("Yellow"))
+        {
+            ShopGO.GetComponent<Shop>().limitYellowCristal--;
+        }
         Ocupado = true;
         nodos.gameObject.SetActive(false);
     }

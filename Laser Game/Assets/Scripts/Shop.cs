@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    public int limitAngular;
+    public int limitPrisma;
+    public int limitBlueCristal;
+    public int limitRedCristal;
+    public int limitYellowCristal;
+
     public GameObject nodos;
     BuildManager buildManager;
 
@@ -15,27 +21,68 @@ public class Shop : MonoBehaviour
 
     public void PurchaseAngular()
     {
-        buildManager.SetComponentToBuild(buildManager.angularPrefab);
-        nodos.gameObject.SetActive(true);
+        if(limitAngular <= 0)
+        {
+            Debug.Log("You Can't Build!");
+        }
+        else
+        {
+            buildManager.SetComponentToBuild(buildManager.angularPrefab);
+            nodos.gameObject.SetActive(true);
+
+        }
+
     }
     public void PurchasePrisma()
     {
-        buildManager.SetComponentToBuild(buildManager.prismaPrefab);
-        nodos.gameObject.SetActive(true);
+        if (limitPrisma <= 0)
+        {
+            Debug.Log("You Can't Build!");
+        }
+        else
+        {
+            buildManager.SetComponentToBuild(buildManager.prismaPrefab);
+            nodos.gameObject.SetActive(true);
+
+        }
     }
     public void PurchaseBlueCristal()
     {
-        buildManager.SetComponentToBuild(buildManager.bluecristalPrefab);
-        nodos.gameObject.SetActive(true);
+        if (limitBlueCristal <= 0)
+        {
+            Debug.Log("You Can't Build!");
+        }
+        else
+        {
+            buildManager.SetComponentToBuild(buildManager.bluecristalPrefab);
+            nodos.gameObject.SetActive(true);
+
+        }
     }
     public void PurchaseRedCristal()
     {
-        buildManager.SetComponentToBuild(buildManager.redcristalPrefab);
-        nodos.gameObject.SetActive(true);
+        if (limitRedCristal <= 0)
+        {
+            Debug.Log("You Can't Build!");
+        }
+        else
+        {
+            buildManager.SetComponentToBuild(buildManager.redcristalPrefab);
+            nodos.gameObject.SetActive(true);
+
+        }
     }
     public void PurchaseYellowCristal()
     {
-        buildManager.SetComponentToBuild(buildManager.yellowcristalPrefab);
-        nodos.gameObject.SetActive(true);
+        if (limitYellowCristal <= 0)
+        {
+            Debug.Log("You Can't Build!");
+        }
+        else
+        {
+            buildManager.SetComponentToBuild(buildManager.yellowcristalPrefab);
+            nodos.gameObject.SetActive(true);
+
+        }
     }
 }

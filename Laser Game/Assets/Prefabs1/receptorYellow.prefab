@@ -61,6 +61,7 @@ MonoBehaviour:
   Encendido: 0
   WinColor: Yellow
   RecievedColor: 
+  WinCanvas: {fileID: 1067235644472514949, guid: f2f82f7aa5fb2d14eb9e19cfa79ed71a, type: 3}
 --- !u!1 &2010872716596202383
 GameObject:
   m_ObjectHideFlags: 0

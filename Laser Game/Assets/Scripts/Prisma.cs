@@ -17,6 +17,9 @@ public class Prisma : MonoBehaviour
     public Material redMat;
     public Material yellowMat;
 
+    public GameObject Parent;
+    public GameObject MenuRotation;
+
     public Collider PrismaColliderR;
     public Collider PrismaColliderL;
 
@@ -35,6 +38,10 @@ public class Prisma : MonoBehaviour
         Encendido = false;
         PrismaColliderR.gameObject.SetActive(true);
         PrismaColliderL.gameObject.SetActive(true);
+    }
+    private void Awake()
+    {
+        MenuRotation.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -260,6 +267,18 @@ public class Prisma : MonoBehaviour
             Desactivar();
         }
     }
+    public void RotacionHoraria()
+    {
+        Encendido = false;
+        Desactivar();
+        Parent.transform.eulerAngles = new Vector3(Parent.transform.eulerAngles.x, Parent.transform.eulerAngles.y + 90, Parent.transform.eulerAngles.z);
+    }
+    public void RotacionAntiHoraria()
+    {
+        Encendido = false;
+        Desactivar();
+        Parent.transform.eulerAngles = new Vector3(Parent.transform.eulerAngles.x, Parent.transform.eulerAngles.y - 90, Parent.transform.eulerAngles.z);
+    }
 
 
     public void LastLaser(LineRenderer laser)
@@ -275,7 +294,6 @@ public class Prisma : MonoBehaviour
         }
         if (cristal != null)
         {
-            Debug.Log("False");
             cristal.GetComponent<Cristal>().EncendidoF = false;
             cristal.GetComponent<Cristal>().EncendidoB = false;
         }
@@ -316,7 +334,6 @@ public class Prisma : MonoBehaviour
 
         if (cristal != null)
         {
-            Debug.Log("False");
             cristal.GetComponent<Cristal>().EncendidoF = false;
             cristal.GetComponent<Cristal>().EncendidoB = false;
         }
@@ -330,7 +347,6 @@ public class Prisma : MonoBehaviour
         }
         if (cristal != null)
         {
-            Debug.Log("False");
             cristal.GetComponent<Cristal>().EncendidoF = false;
             cristal.GetComponent<Cristal>().EncendidoB = false;
         }

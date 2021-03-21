@@ -43,8 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c728c701a1d4f4f96b465d13cb4115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShopGO: {fileID: 0}
   angularPrefab: {fileID: 4488574673446636380, guid: 58fa7cfbe85edc043b5a64f19d8ee590, type: 3}
-  prismaPrefab: {fileID: 5760525417810763257, guid: cc8746a32f4261049b024276df8d54d2, type: 3}
+  prismaPrefab: {fileID: 4707069081487022559, guid: cc8746a32f4261049b024276df8d54d2, type: 3}
   bluecristalPrefab: {fileID: 6464060171442824273, guid: 8344acbfe56c2984d906e529965d3db0, type: 3}
   redcristalPrefab: {fileID: 4437100928550332246, guid: 72de2eae5125ce44889583e2d34e03f3, type: 3}
   yellowcristalPrefab: {fileID: 2246916746065287649, guid: 810a58f499cc0bb49ae0e74e30169bb9, type: 3}
