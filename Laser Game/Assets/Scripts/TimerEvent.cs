@@ -62,10 +62,14 @@ public class TimerEvent : MonoBehaviour
             LuzRoja2.GetComponent<LucesRojasParpadeo>().enabled = true;
             SonidoAlarma.GetComponent<AudioSource>().enabled = true;
             Escombros.SetActive(true);
-            TextoAlerta.SetActive(true);
         }
         
-        if (tiempo >= TiempoFinal && Input.GetKeyDown(KeyCode.Space))
+        if (tiempo >= TiempoFinal)
+        {
+            TextoAlerta.SetActive(true);
+        }
+
+          if (tiempo >= TiempoFinal && Input.GetKeyDown(KeyCode.Space))
         {
             continuar = true;
         }
