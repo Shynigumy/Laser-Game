@@ -724,6 +724,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1122605298}
+    - target: {fileID: 3607992578469568846, guid: f2f82f7aa5fb2d14eb9e19cfa79ed71a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4140695561694670073, guid: f2f82f7aa5fb2d14eb9e19cfa79ed71a, type: 3}
       propertyPath: m_Name
       value: Win Canvas
