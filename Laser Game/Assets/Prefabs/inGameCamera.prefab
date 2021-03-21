@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8978776828095153937}
   - component: {fileID: 8978776828095153938}
+  - component: {fileID: 203391386}
   m_Layer: 0
   m_Name: musicSource
   m_TagString: Untagged
@@ -43,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 3449002822017502056, guid: 6cace98607ab33b439e9f139da12906e, type: 2}
   m_audioClip: {fileID: 8300000, guid: c91d4cc5cd194bf42bb7c2f6933069ff, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -127,6 +128,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &203391386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978776828095153936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1100bf7ce50d24aade23e7ae2dc6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioOut: {fileID: 8978776828095153936}
+  volum: 0.1
 --- !u!1 &8978776828610992465
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +408,7 @@ GameObject:
   - component: {fileID: 8978776828771886283}
   - component: {fileID: 8978776828771886282}
   - component: {fileID: 8978776828771886293}
+  - component: {fileID: 1900479374}
   m_Layer: 0
   m_Name: inGameCamera
   m_TagString: MainCamera
@@ -407,7 +423,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8978776828771886281}
-  m_LocalRotation: {x: 0.7372808, y: 0.00019910416, z: 0.00021713738, w: 0.67558634}
+  m_LocalRotation: {x: 0.73728245, y: 0.00020187584, z: 0.00021431039, w: 0.6755845}
   m_LocalPosition: {x: 1.1, y: 21.59, z: 2.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -565,6 +581,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1900479374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8978776828771886281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 8978776828771886292}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &8978776829252319455
 GameObject:
   m_ObjectHideFlags: 0

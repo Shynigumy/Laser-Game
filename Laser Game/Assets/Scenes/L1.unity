@@ -418,6 +418,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6488068491629156795, guid: 8c36041572e22b440ae72455075b5e33, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.13500977
+      objectReference: {fileID: 0}
     - target: {fileID: 6488068491709990999, guid: 8c36041572e22b440ae72455075b5e33, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -438,6 +442,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1122605298}
+    - target: {fileID: 7500769130997022638, guid: 8c36041572e22b440ae72455075b5e33, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.200012
+      objectReference: {fileID: 0}
     - target: {fileID: 7500769131647041289, guid: 8c36041572e22b440ae72455075b5e33, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1443,17 +1451,9 @@ PrefabInstance:
       propertyPath: nodos
       value: 
       objectReference: {fileID: 477146120}
-    - target: {fileID: 531292349068264669, guid: e74ac7743839f32459eb1467a9c27a4b, type: 3}
-      propertyPath: limitPrisma
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 531292349068264669, guid: e74ac7743839f32459eb1467a9c27a4b, type: 3}
-      propertyPath: limitBlueCristal
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 531292349068264669, guid: e74ac7743839f32459eb1467a9c27a4b, type: 3}
-      propertyPath: limitAngular
-      value: 4
+    - target: {fileID: 531292349068264670, guid: e74ac7743839f32459eb1467a9c27a4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 4925466213358477929, guid: e74ac7743839f32459eb1467a9c27a4b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

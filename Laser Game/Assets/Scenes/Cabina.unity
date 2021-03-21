@@ -241,6 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 179893484}
   - component: {fileID: 179893483}
+  - component: {fileID: 179893485}
   m_Layer: 0
   m_Name: AudioAlarma
   m_TagString: Untagged
@@ -358,6 +359,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &179893485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179893482}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1100bf7ce50d24aade23e7ae2dc6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioOut: {fileID: 179893482}
+  volum: -0.1
 --- !u!1 &415514121
 GameObject:
   m_ObjectHideFlags: 0
@@ -5378,6 +5393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1657606323}
   - component: {fileID: 1657606322}
+  - component: {fileID: 1657606324}
   m_Layer: 0
   m_Name: AudioExplocion
   m_TagString: Untagged
@@ -5495,6 +5511,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1657606324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657606321}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1100bf7ce50d24aade23e7ae2dc6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioOut: {fileID: 179893482}
+  volum: -0.1
 --- !u!1 &1664454425 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7829716516982195223, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
@@ -5559,6 +5589,8 @@ MonoBehaviour:
   ControlesAzul: {fileID: 2887828865765049336}
   ControlesRojo: {fileID: 1867120380}
   TextoAlerta: {fileID: 1781719182}
+  ScritVolum1: {fileID: 179893482}
+  ScritVolum2: {fileID: 1657606321}
   Camara: {fileID: 7148706474449865225}
 --- !u!4 &1938973281
 Transform:

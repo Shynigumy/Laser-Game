@@ -26,6 +26,8 @@ public class TimerEvent : MonoBehaviour
     public GameObject ControlesAzul;
     public GameObject ControlesRojo;
     public GameObject TextoAlerta;
+    public GameObject ScritVolum1;
+    public GameObject ScritVolum2;
 
     public GameObject Camara;
 
@@ -64,6 +66,7 @@ public class TimerEvent : MonoBehaviour
           if (tiempo >= TiempoFinal && Input.GetKeyDown(KeyCode.Space))
         {
             continuar = true;
+
         }
 
         if (continuar == true)
@@ -74,6 +77,9 @@ public class TimerEvent : MonoBehaviour
             LuzRoja2.GetComponent<Light>().intensity -= velocidadApagado;
             Camara.GetComponent<Transform>().Rotate(new Vector3(0f, 30f, 0f) * Time.deltaTime);
             tiempoTransicion += Time.deltaTime;
+            ScritVolum1.GetComponent<InicioAudio>().enabled=true;
+            ScritVolum2.GetComponent<InicioAudio>().enabled=true;
+
         }
 
         if ( tiempoTransicion >= tiempoTransicionFinal)

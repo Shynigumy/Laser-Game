@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1014019546582796899}
   - component: {fileID: 1014019546582796898}
+  - component: {fileID: 1535325275}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -47,3 +48,20 @@ MonoBehaviour:
   optionsPanel: {fileID: 0}
   Master: {fileID: 24100000, guid: 6cace98607ab33b439e9f139da12906e, type: 2}
   resolutionDropdown: {fileID: 0}
+--- !u!114 &1535325275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014019546582796897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 67799b50a60639a48b8f6a6542a66f1f, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
