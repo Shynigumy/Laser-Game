@@ -260,7 +260,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 40914df3597e3a14896501afd0e9b9e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5397,7 +5397,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 033cd64aef5d0604bac27d948e240cf8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5611,6 +5611,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1125322774491508685, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
   m_PrefabInstance: {fileID: 7829716516425566990}
   m_PrefabAsset: {fileID: 0}
+--- !u!108 &7148706474543752390 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 1125322774491508680, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
+  m_PrefabInstance: {fileID: 7829716516425566990}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7148706475429296083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1125322774151265501, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
@@ -5632,6 +5637,30 @@ PrefabInstance:
       propertyPath: volumeTrigger
       value: 
       objectReference: {fileID: 1938973281}
+    - target: {fileID: 1125322774151265496, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
+      propertyPath: colorSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125322774151265496, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
+      propertyPath: myLight
+      value: 
+      objectReference: {fileID: 7148706474543752390}
+    - target: {fileID: 1125322774151265501, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125322774491508685, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125322774491508687, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
+      propertyPath: colorSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125322774491508687, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
+      propertyPath: changeIntensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6948267931480376154, guid: e1ed26c1332a4934caa6613889370d8b, type: 3}
       propertyPath: m_Name
       value: CabinaCompleta
