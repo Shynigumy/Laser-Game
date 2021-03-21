@@ -151,9 +151,7 @@ public class Cristal : MonoBehaviour
             }
             else if (hit.collider.gameObject.tag == "Prisma IN")
             {
-                Debug.Log(prisma);
                 prisma = hit.collider.gameObject;
-                Debug.Log(prisma);
                 prisma.GetComponent<Prisma>().Encendido = true;
 
                 prisma.GetComponent<Prisma>().LastLaser(FirePointCristal.GetComponent<LineRenderer>());

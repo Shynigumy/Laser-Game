@@ -10,8 +10,7 @@ public class Weapon : MonoBehaviour
     public GameObject receptor;
     public GameObject prisma;
 
-    public GameObject FirePointCristalF;
-    public GameObject FirePointCristalB;
+
 
     void Start()
     {
@@ -45,7 +44,6 @@ public class Weapon : MonoBehaviour
             else if (hit.collider.gameObject.tag == "DirCheckI")
             {
                 angular = hit.collider.gameObject.transform.parent.gameObject;
-                Debug.Log(angular);
                 angular.GetComponent<Angular>().EncendidoI = true;
 
                 angular.GetComponent<Angular>().LastLaser(FirePoint.GetComponent<LineRenderer>());
